@@ -1,0 +1,33 @@
+{
+  "routerMap": [
+    {
+      "name": "Container",
+      "pageSourceFile": "src/main/ets/views/Container.ets",
+      "buildFunction": "Factory",
+      "data": {
+        "description": "container first page"
+      }
+    },{
+      "name": "WebPage",
+      "pageSourceFile": "src/main/ets/views/WebPage.ets",
+      "buildFunction": "Factory",
+      "data": {
+        "description": "link web"
+      }
+    },{
+      "name": "OpinionFeedback",
+      "pageSourceFile": "src/main/ets/views/OpinionFeedback.ets",
+      "buildFunction": "Factory",
+      "data": {
+        "description": "user opinion feedback"
+      }
+    },{
+      "name": "DebatePrefer",
+      "pageSourceFile": "src/main/ets/views/DebatePrefer.ets",
+      "buildFunction": "Factory",
+      "data": {
+        "description": "live debate prefer~"
+      }
+    }
+  ]
+}

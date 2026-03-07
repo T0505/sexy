@@ -1,0 +1,24 @@
+{
+  "color": [
+    {
+      "name": "start_window_background",
+      "value": "#000000"
+    },
+    {
+      "name": "background_light",
+      "value": "#FFF1F1F1"
+    },
+    {
+      "name": "purity",
+      "value": "#FFFFFF"
+    },
+    {
+      "name": "bar_opacity",
+      "value": "#F5FFFFFF"
+    },
+    {
+      "name": "tint",
+      "value": "#F5262626"
+    }
+  ]
+}

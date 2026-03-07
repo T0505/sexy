@@ -1,0 +1,20 @@
+{
+  "string": [
+    {
+      "name": "app_name",
+      "value": "feminine"
+    },
+    {
+      "name": "approximate_location",
+      "value": "Used for precise advertising delivery and attribution analysis, enhancing the effectiveness of advertising conversions"
+    },
+    {
+      "name": "location",
+      "value": "Obtain meter-level location"
+    },
+    {
+      "name": "app_tracking_consent",
+      "value": "Obtain oaid"
+    }
+  ]
+}

@@ -1,0 +1,64 @@
+{
+  "color": [
+    {
+      "name": "start_window_background",
+      "value": "#FFFFFF"
+    },
+    {
+      "name": "main",
+      "value": "#fcb8be"
+    },
+    {
+      "name": "opacity",
+      "value": "#99000000"
+    },
+    {
+      "name": "black",
+      "value": "#000"
+    },
+    {
+      "name": "red",
+      "value": "#F03A3A"
+    },
+    {
+      "name": "blue",
+      "value": "#007DFF"
+    },
+    {
+      "name": "orange",
+      "value": "#FF9900"
+    },
+    {
+      "name": "yellow",
+      "value": "#FFFF00"
+    },
+    {
+      "name": "green",
+      "value": "#33CC33"
+    },
+    {
+      "name": "cyan",
+      "value": "#00CCCC"
+    },
+    {
+      "name": "shallow",
+      "value": "#FFF3F3F3"
+    },
+    {
+      "name": "white",
+      "value": "#FFF"
+    },
+    {
+      "name": "grey",
+      "value": "#E5E5E5"
+    },
+    {
+      "name": "light",
+      "value": "#FF3C3C3C"
+    },
+    {
+      "name": "shade",
+      "value": "#CC291E20"
+    }
+  ]
+}
