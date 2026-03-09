@@ -1,6 +1,8 @@
-import { Card } from "../common/Patterns";
+import { Card } from "../utils/Patterns";
 import PageHeader from "../component/PageHeader";
 import { LiveDiscovery } from "../common/Mock";
+import Animations from "../utils/Animation";
+import LoadingImage from "../component/LoadingImage";
 
 @Builder
 export function Factory() {
@@ -19,9 +21,9 @@ struct DebatePrefer {
         if(this.discovery) {
           Scroll() {
             Column() {
-              Image(this.discovery.image)
-                .width("100%")
-                .alt($r("app.media.image_alt"));
+              LoadingImage({
+                url:this.discovery.image
+              });
               Column({space: 8}) {
                 Column() {
                   Text(this.discovery.title)
@@ -62,30 +64,30 @@ struct DebatePrefer {
             if(this.discovery.status) {
               Row() {
                 Stack() {
-                  Text(`${this.discovery.oppose}`)
+                  Text(this.discovery.oppose.toString())
                     .fontSize(14)
                     .fontColor(Color.White)
-                    .fontWeight(FontWeight.Bold)
+                    .fontWeight(FontWeight.Bold);
                 }
                 .layoutWeight(this.discovery.oppose)
                 .height("100%")
                 .linearGradient({
                   angle: 90,
                   colors: [["#FF5E5E", 0.0], ["#FF9595", 1.0]]
-                })
+                });
 
                 Stack() {
-                  Text(`${this.discovery.agree}`)
+                  Text(this.discovery.agree.toString())
                     .fontSize(14)
                     .fontColor(Color.White)
-                    .fontWeight(FontWeight.Bold)
+                    .fontWeight(FontWeight.Bold);
                 }
                 .layoutWeight(this.discovery.agree)
                 .height("100%")
                 .linearGradient({
                   angle: 90,
                   colors: [["#8DBAFF", 0.0], ["#4A90E2", 1.0]]
-                })
+                });
               }
               .width("100%")
               .height(44)
@@ -113,10 +115,12 @@ struct DebatePrefer {
                   this.row = nv.width as number
                 })
                 .onClick(() => {
-                  if(this.discovery) {
-                    this.discovery.oppose++;
-                    this.discovery.status = 1;
-                  }
+                  this.getUIContext().animateTo(Animations.slideInFromLeft(), () => {
+                    if(this.discovery) {
+                      this.discovery.oppose++;
+                      this.discovery.status = 1;
+                    }
+                  });
                 });
 
                 Stack() {
@@ -136,10 +140,12 @@ struct DebatePrefer {
                 }
                 .layoutWeight(1)
                 .onClick(() => {
-                  if(this.discovery) {
-                    this.discovery.agree++;
-                    this.discovery.status = 1;
-                  }
+                  this.getUIContext().animateTo(Animations.slideInFromLeft(), () => {
+                    if(this.discovery) {
+                      this.discovery.agree++;
+                      this.discovery.status = 1;
+                    }
+                  });
                 });
               }
               .width("100%")

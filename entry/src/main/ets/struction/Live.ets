@@ -1,9 +1,11 @@
 import PageHeader from "../component/PageHeader";
 import { LiveDiscovery, WaterFlowDataSource,liveDiscoveryDate } from "../common/Mock";
 import { stack } from "../common/ShareStorage";
+import LoadingImage from "../component/LoadingImage";
 
 @Component
 export default struct Live {
+
 
   private source = new WaterFlowDataSource();
   private scroller: Scroller = new Scroller();
@@ -46,23 +48,30 @@ export default struct Live {
       }
     }
   }
+
+  @Builder
+  right() {
+    Image($r("app.media.ic_add"))
+      .width(24)
+      .height(24)
+      .onClick(() => {
+        
+      });
+  }
   build() {
 
     Column() {
-      PageHeader({ title: "生活",left: false })
+      PageHeader({ title: "生活",left: false,right: this.right});
 
       WaterFlow({ scroller: this.scroller,footer: this.footer}) {
         LazyForEach(this.source, (item: LiveDiscovery) => {
           FlowItem() {
             Column() {
-              Image(item.image)
-                .width("100%")
-                .height(item.height)
-                .alt($r("app.media.image_alt"))
-                .borderRadius({
-                  topLeft: 8,
-                  topRight: 8
-                })
+              LoadingImage({
+                h:item.height?.toString(),
+                b:[8,8,0,0],
+                url:item.image,
+              });
 
               Column() {
                 Text(item.title)

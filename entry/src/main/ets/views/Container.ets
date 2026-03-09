@@ -2,6 +2,7 @@ import { TabNav, TabsData } from '../common/DataList';
 import Home from '../struction/Home';
 import Profile from '../struction/Profile';
 import Live from '../struction/Live';
+import Mirror from '../struction/Mirror';
 
 @Builder
 export function Factory() {
@@ -25,6 +26,9 @@ struct Container {
               }
               if("生活" === item.title) {
                 Live();
+              }
+              if("镜子" === item.title) {
+                Mirror()
               }
               if("我的" === item.title) {
                 Profile()

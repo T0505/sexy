@@ -1,12 +1,50 @@
-import { Schedule,Vocation,HomeMethod } from "../common/GenreInterface";
+import { Schedule,Vocation,HomeMethod,TodayWeight } from "../common/GenreInterface";
 import {vocations,dates,methods } from "../common/DataList";
 import PageHeader from "../component/PageHeader";
-import { Card } from "../common/Patterns";
+import { Card } from "../utils/Patterns";
+import { IndividualPickerDrawer } from "../utils/IndividualPickerDrawer";
+import { save,get } from "../utils/DatabaseUtil";
+import { common } from "@kit.AbilityKit";
+
 @Component
 export default struct Home {
   @State schedules: Schedule[] = [];
   @State month: number = 0;
   @State open: boolean = false;
+  private context = this.getUIContext().getHostContext() as common.UIAbilityContext;
+  private controller:CustomDialogController =  new CustomDialogController({
+    builder: IndividualPickerDrawer({
+      title: "记录体重",
+      unit: "kg",
+      startValue: 10,
+      endValue: 500,
+      defaultValue: "50.4",
+      onAccept: async (v) => {
+        const w:TodayWeight = {
+          weight: v,
+          date: new Date(),
+        };
+
+        let array = await get<TodayWeight[]>(this.context,"weight");
+        if(array) {
+          const index = array.findIndex(item => new Date(item.date).toDateString() === new Date(w.date).toDateString());
+          if (index !== -1) {
+            array[index] = w;
+          } else {
+            array.push(w);
+          }
+        } else {
+          array = [w];
+        }
+
+        save(this.context,"weight",array);
+      }
+    }),
+    alignment: DialogAlignment.Bottom,
+    customStyle: true,
+    maskColor: $r("app.color.opacity"),
+  });
+
   aboutToAppear(): void {
 
     const date = new Date();
@@ -180,7 +218,14 @@ export default struct Home {
                     }
                     .layoutWeight(1);
                   }
-                  .width("100%");
+                  .width("100%")
+                  .onClick(() => {
+                    if (m.callback) {
+                      m.callback();
+                    } else {
+                      this.controller.open();
+                    }
+                  });
                 },
                 (s: HomeMethod) => s.title
               );

@@ -6,7 +6,8 @@ export default struct PageHeader{
   @Prop title:string;
   @Prop left:boolean = true;
   @BuilderParam right: () => void = this.base;
-  @Builder base() {
+  @Builder
+  base() {
     Blank()
       .width(28);
   }

@@ -28,6 +28,34 @@
       "data": {
         "description": "live debate prefer~"
       }
+    },{
+      "name": "Diary",
+      "pageSourceFile": "src/main/ets/views/Diary.ets",
+      "buildFunction": "Factory",
+      "data": {
+        "description": "writing dairy page"
+      }
+    },{
+      "name": "DiaryBag",
+      "pageSourceFile": "src/main/ets/views/DiaryBag.ets",
+      "buildFunction": "Factory",
+      "data": {
+        "description": "daily list"
+      }
+    },{
+      "name": "Overview",
+      "pageSourceFile": "src/main/ets/views/Overview.ets",
+      "buildFunction": "Factory",
+      "data": {
+        "description": "weight overview"
+      }
+    },{
+      "name": "HealthAdvice",
+      "pageSourceFile": "src/main/ets/views/HealthAdvice.ets",
+      "buildFunction": "Factory",
+      "data": {
+        "description": "health advice page"
+      }
     }
   ]
 }

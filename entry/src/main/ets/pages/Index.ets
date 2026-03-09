@@ -12,7 +12,7 @@ import { AAID } from "@kit.PushKit";
 @Component
 struct Index {
   @State show: boolean | null = null;
-  context = this.getUIContext().getHostContext() as common.UIAbilityContext;
+  private context = this.getUIContext().getHostContext() as common.UIAbilityContext;
   controller: CustomDialogController = new CustomDialogController({
     builder: PopUpUtil({
       title: "隐私政策与用户协议",
