@@ -56,6 +56,13 @@
       "data": {
         "description": "health advice page"
       }
+    },{
+      "name": "WomanKnowledge",
+      "pageSourceFile": "src/main/ets/views/WomanKnowledge.ets",
+      "buildFunction": "Factory",
+      "data": {
+        "description": "woman knowledge"
+      }
     }
   ]
 }

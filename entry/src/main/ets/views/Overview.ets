@@ -20,6 +20,7 @@ struct Overview {
 
     let values = new JArrayList<EntryOhos>();
     const array = await get<TodayWeight[]>(this.context,"weight");
+
     if(array) {
       for (let i = 0; i < array.length; i++) {
         values.add(new EntryOhos(i, Number(array[i].weight)));

@@ -139,3 +139,16 @@ export interface DoctorAdvice {
   head:string;
   content:string;
 }
+
+export interface CategoryItem {
+  title: string;
+  icon: string;
+  color: string;
+}
+
+export interface KnowledgeData {
+  title: string;
+  tag: string;
+  img: string;
+  author: string;
+}

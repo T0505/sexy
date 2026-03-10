@@ -1,7 +1,7 @@
 {
   "app": {
-    "bundleName": "com.hhxy.feminine",
-    "vendor": "example",
+    "bundleName": "com.hhxy.beauty.report",
+    "vendor": "T",
     "versionCode": 1000000,
     "versionName": "1.0.0",
     "icon": "$media:layered_image",

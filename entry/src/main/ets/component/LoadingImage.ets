@@ -6,23 +6,13 @@ export default struct LoadingImage {
   @State loading: boolean = true;
   build() {
     Stack() {
-      if (this.loading) {
-        LoadingProgress()
-          .width(40)
-          .height(40)
-          .color($r("app.color.main"))
-      }
 
       Image(this.url)
         .width("100%")
         .height(this.h)
         .objectFit(ImageFit.Cover)
-        .onComplete(() => {
-          this.loading = false;
-        })
-        .onError(() => {
-          this.loading = false;
-        })
+        .onComplete(() => this.loading = false)
+        .onError(() => this.loading = false)
         .borderRadius({
           topLeft: this.b[0],
           topRight: this.b[1],
@@ -30,7 +20,19 @@ export default struct LoadingImage {
           bottomLeft: this.b[3],
         })
         .alt($r("app.media.image_alt"));
-
+      if (this.loading) {
+        Column() {
+          LoadingProgress()
+            .width(40)
+            .height(40)
+            .color($r("app.color.main"));
+        }
+        .width("100%")
+        .height("100%")
+        .alignItems(HorizontalAlign.Center)
+        .justifyContent(FlexAlign.Center)
+        .backgroundColor(Color.White);
+      }
     }
     .width("100%")
     .height(this.h);

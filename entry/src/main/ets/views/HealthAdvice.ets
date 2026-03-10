@@ -1,5 +1,5 @@
 import PageHeader from "../component/PageHeader";
-import { DoctorAdvice, HEALTH_ADVICE_DATA } from "../common/DataList";
+import { DoctorAdvice, HEALTH_ADVICE_DATA } from "../common/Mock";
 import { Card } from "../utils/Patterns";
 import LoadingImage from "../component/LoadingImage";
 

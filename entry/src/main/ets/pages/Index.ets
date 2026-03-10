@@ -74,9 +74,9 @@ struct Index {
 
   build() {
     Navigation(stack) {
-      Column({ space: 16 }) {
+      Column({ space: 32 }) {
         Image($r("app.media.startIcon"))
-          .width(80)
+          .width(136  )
           .borderRadius(8);
 
         Text($r("app.string.app_name"))

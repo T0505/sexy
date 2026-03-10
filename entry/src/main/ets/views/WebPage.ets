@@ -6,11 +6,11 @@ import { RandomUtil } from '@pura/harmony-utils';
 
 @Builder
 export function Factory() {
-  WebH5Page();
+  WebPage();
 }
 
 @Component
-struct WebH5Page {
+struct WebPage {
   @State title: string = "";
   @State url: string = "";
 
